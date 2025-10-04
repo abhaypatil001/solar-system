@@ -9,8 +9,8 @@ on:
 
 env:
     MONGO_URI: 'mangodb+srv://supercluster.d83jj.mangodb.net/superData'
-    MONGO_USERNAME: ${{ vars.MONGO_USERNAME }}
-    MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
+    MONGO_USERNAME: ${{ vars.MONGO_USERNAME}}
+    MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD}}
 
 jobs:
     init-testing:
