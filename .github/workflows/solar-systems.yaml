@@ -20,7 +20,7 @@ jobs:
             nodejs_version: [18, 19, 20]
             operating_system: [ubuntu-latest, macos-latest]
             exclude:
-              - nodejs_version: 18,19
+              - nodejs_version: 18
                 operating_system: macos-latest
         runs-on: ${{matrix.operating_system}}
         steps:
@@ -41,6 +41,6 @@ jobs:
             - name: Archive Test Results
               uses: actions/upload-artifact@v4
               with:
-                name: Mocha-Test-Result
+                name: Mocha-Test-Result-${{matrix.operating_system}}-${{matrix.nodejs_version}}
                 path: test-results.xml
 
