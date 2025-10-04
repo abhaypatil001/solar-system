@@ -39,7 +39,6 @@ jobs:
               run: npm test
             
             - name: Archive Test Results
-              if : always()
               uses: actions/upload-artifact@v4
               with:
                 name: Mocha-Test-Result-${{matrix.operating_system}}-${{matrix.nodejs_version}}
@@ -65,6 +64,7 @@ jobs:
               run: npm run coverage
             
             - name: Code Coverage Results
+              if : always()
               uses: actions/upload-artifact@v4
               with:
                 name: Code-Coverage-Result
