@@ -79,6 +79,7 @@ jobs:
 
     docker-login:
       name: Containerization
+      needs: [ init-testing, code-coverage]
       runs-on: ubuntu-latest
       steps:
         - name: checkout repo
