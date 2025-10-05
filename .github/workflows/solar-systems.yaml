@@ -80,6 +80,8 @@ jobs:
     docker-login:
       name: Containerization
       needs: [ init-testing, code-coverage]
+      permissions: 
+        packages: write
       runs-on: ubuntu-latest
       steps:
         - name: checkout repo
