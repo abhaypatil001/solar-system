@@ -27,17 +27,17 @@ jobs:
             - name: Checkout Repository
               uses: actions/checkout@v4
             
-            - name: Setup NodeJS Version - 18 
-              uses: actions/setup-node@v5
-              with:
-                node-version: ${{matrix.nodejs_version}}
-            
             - name: NodeJs Cache
               uses: actions/cache@v4
               with:
                 path: npm_modules
                 key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
 
+            - name: Setup NodeJS Version - 18 
+              uses: actions/setup-node@v5
+              with:
+                node-version: ${{matrix.nodejs_version}}
+            
             - name: Install Dependencies
               run: npm install
             
