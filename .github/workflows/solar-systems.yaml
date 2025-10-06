@@ -169,4 +169,5 @@ jobs:
             kubectl config current-context
             kubectl cluster-info
             kubectl get nodes -o wide
+            kubectl get pods
             
