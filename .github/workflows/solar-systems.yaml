@@ -159,6 +159,11 @@ jobs:
       name: kubernetes
       runs-on: ubuntu-latest
       steps:
+        - name: Kubectl install
+          uses: actions/checkout@v5
+          uses: azure/setup-kubectl@v4
+          with:
+            version: '1.34.0'
         - name: Kubeconfig Update
           uses: azure/k8s-set-context@v4
           with:
