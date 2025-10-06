@@ -164,4 +164,9 @@ jobs:
           with:
             method: kubeconfig
             kubeconfig: ${{secrets.K8S_KUBECONFIG}}
+        - name: Verify Kubeconfig Access
+          run: |
+            kubectl config current-context
+            kubectl cluster-info
+            kubectl get nodes -o wide
             
